@@ -209,9 +209,6 @@ export default function skosConcept(baseUri?: string) {
         description: 'This concept does not yet have a unique identifier.',
         type: 'string',
         initialValue: () => `${randomKey(6)}`,
-        components: {
-          input: Identifier,
-        },
       }),
       defineField({
         name: 'broader',
