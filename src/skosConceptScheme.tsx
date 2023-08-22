@@ -14,7 +14,7 @@ import NodeTree from './components/NodeTree'
 export default function skosConceptScheme(baseUri?: string) {
   return defineType({
     name: 'skosConceptScheme',
-    title: 'Concept Scheme',
+    title: 'Category Scheme',
     type: 'document',
     icon: NodeTree,
     initialValue: async (props, context) => {

@@ -12,10 +12,10 @@ import NodeTree from './components/NodeTree'
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const structure = (S: any) =>
   S.list()
-    .title('Taxonomy Manager')
+    .title('Category Manager')
     .items([
-      S.documentTypeListItem('skosConceptScheme').title('Concept Schemes'),
-      S.documentTypeListItem('skosConcept').title('Concepts'),
+      S.documentTypeListItem('skosConceptScheme').title('Category Schemes'),
+      S.documentTypeListItem('skosConcept').title('Categories'),
     ])
 
 // set default document node here — so that if users want concepts

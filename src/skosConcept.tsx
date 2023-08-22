@@ -20,7 +20,7 @@ import {Identifier} from './components/inputs'
 export default function skosConcept(baseUri?: string) {
   return defineType({
     name: 'skosConcept',
-    title: 'Concept',
+    title: 'Category',
     type: 'document',
     icon: AiOutlineTags,
     initialValue: async (props, context) => {
@@ -209,8 +209,6 @@ export default function skosConcept(baseUri?: string) {
         description: 'This concept does not yet have a unique identifier.',
         type: 'string',
         initialValue: () => `${randomKey(6)}`,
-        hidden: ({document}) => !!document?.conceptId,
-        readOnly: ({document}) => !!document?.conceptId,
         components: {
           input: Identifier,
         },
@@ -337,6 +335,11 @@ export default function skosConcept(baseUri?: string) {
           </StyledDescription>
         ),
         rows: 3,
+      }),
+      defineField({
+        name: 'image',
+        title: 'Image',
+        type: 'image',
       }),
       defineField({
         name: 'changeNote',

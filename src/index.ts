@@ -32,7 +32,7 @@ const taxonomyManager = definePlugin((options?: Options) => {
     plugins: [
       deskTool({
         name: 'taxonomy',
-        title: 'Taxonomy',
+        title: 'Categories',
         structure,
         defaultDocumentNode,
         icon: NodeTree,
