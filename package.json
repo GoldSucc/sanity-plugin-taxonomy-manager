@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-taxonomy-manager",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "Create and manage SKOS compliant taxonomies, thesauri, and classification schemes in Sanity Studio.",
   "keywords": [
     "sanity",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/andybywire/sanity-plugin-taxonomy-manager.git"
+    "url": "https://github.com/GoldSucc/sanity-plugin-taxonomy-manager.git"
   },
   "license": "MIT",
   "author": "Andy Fitzgerald",
