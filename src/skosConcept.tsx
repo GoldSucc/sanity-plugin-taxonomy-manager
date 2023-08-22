@@ -15,7 +15,6 @@ import {randomKey} from '@sanity/util/content'
 import {AiOutlineTag, AiOutlineTags} from 'react-icons/ai'
 import {StyledDescription} from './styles'
 import baseIriField from './modules/baseIriField'
-import {Identifier} from './components/inputs'
 
 export default function skosConcept(baseUri?: string) {
   return defineType({
