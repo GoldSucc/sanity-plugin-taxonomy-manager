@@ -8,7 +8,6 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
 import {randomKey} from '@sanity/util/content'
 import baseIriField from './modules/baseIriField'
-import {Identifier} from './components/inputs'
 import NodeTree from './components/NodeTree'
 
 export default function skosConceptScheme(baseUri?: string) {
