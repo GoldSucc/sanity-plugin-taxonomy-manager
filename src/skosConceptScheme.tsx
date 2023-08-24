@@ -55,14 +55,9 @@ export default function skosConceptScheme(baseUri?: string) {
       defineField({
         name: 'schemeId',
         title: 'Identifier',
-        description: 'This scheme does not yet have a unique identifier.',
+        description: 'Schema unique identifier.',
         type: 'string',
         initialValue: () => `${randomKey(6)}`,
-        hidden: ({document}) => !!document?.schemeId,
-        readOnly: ({document}) => !!document?.schemeId,
-        components: {
-          input: Identifier,
-        },
       }),
       defineField({
         name: 'topConcepts',

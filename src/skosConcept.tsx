@@ -205,9 +205,15 @@ export default function skosConcept(baseUri?: string) {
       defineField({
         name: 'conceptId',
         title: 'Identifier',
-        description: 'This concept does not yet have a unique identifier.',
+        description: 'Concept unique identifier.',
         type: 'string',
         initialValue: () => `${randomKey(6)}`,
+      }),
+      defineField({
+        name: 'highlight',
+        title: 'Highlight',
+        description: 'Highlight this concept in the hierarchy view.',
+        type: 'boolean',
       }),
       defineField({
         name: 'broader',
@@ -336,6 +342,11 @@ export default function skosConcept(baseUri?: string) {
         name: 'image',
         title: 'Image',
         type: 'image',
+      }),
+      defineField({
+        name: 'priority',
+        title: 'Priority',
+        type: 'number',
       }),
       defineField({
         name: 'changeNote',

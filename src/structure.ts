@@ -12,9 +12,9 @@ import NodeTree from './components/NodeTree'
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const structure = (S: any) =>
   S.list()
-    .title('Category Manager')
+    .title('Navigation Manager')
     .items([
-      S.documentTypeListItem('skosConceptScheme').title('Category Schemes'),
+      S.documentTypeListItem('skosConceptScheme').title('Navigation'),
       S.documentTypeListItem('skosConcept').title('Categories'),
     ])
 
