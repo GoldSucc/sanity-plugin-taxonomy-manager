@@ -9,7 +9,7 @@
  * @todo Abstract broader and related concept filter into reusable function, and/or add in validation to cover wider scenarios.
  */
 
-import {defineType, defineField} from 'sanity'
+import {defineField, defineType} from 'sanity'
 import {WarningOutlineIcon} from '@sanity/icons'
 import {randomKey} from '@sanity/util/content'
 import {AiOutlineTag, AiOutlineTags} from 'react-icons/ai'
@@ -214,6 +214,18 @@ export default function skosConcept(baseUri?: string) {
         title: 'Highlight',
         description: 'Highlight this concept in the hierarchy view.',
         type: 'boolean',
+      }),
+      defineField({
+        name: 'icon',
+        title: 'Icon',
+        type: 'string',
+        description: 'Icon to display.',
+      }),
+      defineField({
+        name: 'target',
+        title: 'Target',
+        type: 'string',
+        description: 'Browser target for links.',
       }),
       defineField({
         name: 'broader',
