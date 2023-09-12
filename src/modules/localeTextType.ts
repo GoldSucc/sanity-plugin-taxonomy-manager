@@ -1,7 +1,7 @@
 import {defineField, defineType} from 'sanity'
 import {supportedLanguages} from '../locale/languages'
 
-export const localeString = defineType({
+export const localeText = defineType({
   title: 'Localized text',
   name: 'localeText',
   type: 'object',

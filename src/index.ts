@@ -3,10 +3,12 @@ import {deskTool} from 'sanity/desk'
 import skosConcept from './skosConcept'
 import skosConceptScheme from './skosConceptScheme'
 import TreeView from './components/TreeView'
-import {schemeFilter, branchFilter} from './helpers'
+import {branchFilter, schemeFilter} from './helpers'
 
 import {defaultDocumentNode, structure} from './structure'
 import NodeTree from './components/NodeTree'
+import {localeText} from './modules/localeTextType'
+import {localeString} from './modules/localeStringType'
 
 interface Options {
   baseUri?: string
@@ -27,7 +29,7 @@ const taxonomyManager = definePlugin((options?: Options) => {
     name: 'taxonomyManager',
     options,
     schema: {
-      types: [skosConcept(baseUri), skosConceptScheme(baseUri)],
+      types: [skosConcept(baseUri), skosConceptScheme(baseUri), localeString, localeText],
     },
     plugins: [
       deskTool({
