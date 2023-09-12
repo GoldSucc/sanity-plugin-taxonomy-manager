@@ -68,7 +68,7 @@ export default function skosConcept(baseUri?: string) {
       defineField({
         name: 'definition',
         title: 'Definition',
-        type: 'localeTextType',
+        type: 'localeText',
         description: (
           <StyledDescription>
             <summary>A complete explanation of the intended meaning of the concept.</summary>
