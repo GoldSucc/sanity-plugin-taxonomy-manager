@@ -15,6 +15,7 @@ import {randomKey} from '@sanity/util/content'
 import {AiOutlineTag, AiOutlineTags} from 'react-icons/ai'
 import {StyledDescription} from './styles'
 import baseIriField from './modules/baseIriField'
+import {baseLanguage} from './locale/languages'
 
 export default function skosConcept(baseUri?: string) {
   return defineType({
@@ -46,7 +47,7 @@ export default function skosConcept(baseUri?: string) {
       defineField({
         name: 'prefLabel',
         title: 'Preferred Label',
-        type: 'string',
+        type: 'localeString',
         description: 'The preferred lexical label for this concept.',
         validation: (Rule) =>
           Rule.required().custom((prefLabel, context) => {
@@ -67,7 +68,7 @@ export default function skosConcept(baseUri?: string) {
       defineField({
         name: 'definition',
         title: 'Definition',
-        type: 'text',
+        type: 'localeTextType',
         description: (
           <StyledDescription>
             <summary>A complete explanation of the intended meaning of the concept.</summary>
@@ -93,7 +94,6 @@ export default function skosConcept(baseUri?: string) {
             </div>
           </StyledDescription>
         ),
-        rows: 3,
       }),
       defineField({
         name: 'example',
@@ -399,18 +399,18 @@ export default function skosConcept(baseUri?: string) {
         name: 'topConcept',
         by: [
           {field: 'topConcept', direction: 'desc'},
-          {field: 'prefLabel', direction: 'asc'},
+          {field: `prefLabel.${baseLanguage?.id}`, direction: 'asc'},
         ],
       },
       {
         title: 'Preferred Label',
         name: 'prefLabel',
-        by: [{field: 'prefLabel', direction: 'asc'}],
+        by: [{field: `prefLabel.${baseLanguage?.id}`, direction: 'asc'}],
       },
     ],
     preview: {
       select: {
-        title: 'prefLabel',
+        title: `prefLabel.${baseLanguage?.id}`,
       },
       prepare({title}) {
         return {

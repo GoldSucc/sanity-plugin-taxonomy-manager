@@ -9,6 +9,7 @@ import {defineArrayMember, defineField, defineType} from 'sanity'
 import {randomKey} from '@sanity/util/content'
 import baseIriField from './modules/baseIriField'
 import NodeTree from './components/NodeTree'
+import {baseLanguage} from './locale/languages'
 
 export default function skosConceptScheme(baseUri?: string) {
   return defineType({
@@ -32,15 +33,14 @@ export default function skosConceptScheme(baseUri?: string) {
       defineField({
         name: 'title',
         title: 'Title',
-        type: 'string',
+        type: 'localeString',
         description:
           'Taxonomy schemes group concepts into defined sets, such as thesauri, classification schemes, or facets. Concepts may belong on many (or no) concept schemes, and you may create as many (or few) concept schemes as you like',
       }),
       defineField({
         name: 'description',
         title: 'Description',
-        type: 'text',
-        rows: 5,
+        type: 'localeText',
         description: 'Describe the intended use of this scheme.',
       }),
       defineField({
@@ -91,7 +91,7 @@ export default function skosConceptScheme(baseUri?: string) {
     ],
     preview: {
       select: {
-        title: 'title',
+        title: `title.${baseLanguage?.id}`,
       },
       prepare({title}) {
         return {
