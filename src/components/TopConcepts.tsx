@@ -5,11 +5,11 @@
  */
 
 import {useCallback, useContext, useState} from 'react'
-import {Text, Inline, Tooltip, Box, Stack} from '@sanity/ui'
-import {AddCircleIcon, TrashIcon, ToggleArrowRightIcon, SquareIcon} from '@sanity/icons'
+import {Box, Inline, Stack, Text, Tooltip} from '@sanity/ui'
+import {AddCircleIcon, SquareIcon, ToggleArrowRightIcon, TrashIcon} from '@sanity/icons'
 import {useCreateConcept, useRemoveConcept} from '../hooks'
 import {TopConceptTerm} from '../types'
-import {StyledTopConcept, StyledTreeToggle, StyledTreeButton} from '../styles'
+import {StyledTopConcept, StyledTreeButton, StyledTreeToggle} from '../styles'
 import {SchemeContext} from './TreeView'
 import {ChildConcepts} from './ChildConcepts'
 import {ConceptDetailLink} from './ConceptDetailLink'
@@ -36,11 +36,11 @@ export const TopConcepts = ({concept, treeVisibility}: TopConceptsProps) => {
   }, [levelVisibility])
 
   const handleAddChild = useCallback(() => {
-    createConcept('concept', concept?.id, concept?.prefLabel)
+    createConcept('concept', concept?.id, concept?.prefLabel.en)
   }, [concept?.id, concept?.prefLabel, createConcept])
 
   const handleRemoveConcept = useCallback(() => {
-    removeConcept(concept?.id, 'topConcept', concept?.prefLabel)
+    removeConcept(concept?.id, 'topConcept', concept?.prefLabel.en)
   }, [concept?.id, concept?.prefLabel, removeConcept])
 
   return (

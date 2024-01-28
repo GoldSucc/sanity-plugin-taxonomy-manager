@@ -1,12 +1,17 @@
+export interface LocalisedString {
+  en: string
+  nb: string
+}
+
 export interface ChildConceptTerm {
-  prefLabel: string
+  prefLabel: LocalisedString
   id: string
   level?: number
   childConcepts?: ChildConceptTerm[]
 }
 
 export interface TopConceptTerm {
-  prefLabel: string
+  prefLabel: LocalisedString
   id: string
   childConcepts?: ChildConceptTerm[]
 }

@@ -34,7 +34,7 @@ export function ConceptDetailLink({concept}: {concept: ChildConceptTerm}) {
 
   return (
     <StyledConceptLink href="#" onClick={openInNewPane}>
-      {prefLabel}
+      {prefLabel.en}
     </StyledConceptLink>
   )
 }

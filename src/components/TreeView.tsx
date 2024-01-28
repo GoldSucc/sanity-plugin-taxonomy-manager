@@ -28,7 +28,7 @@ export const TreeView = ({document}: {document: any}) => {
                   Description
                 </Text>
                 <Text size={2} muted style={descriptionStyle}>
-                  {document.displayed.description}
+                  {document.displayed.description.en}
                 </Text>
               </Stack>
             </Stack>

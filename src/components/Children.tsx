@@ -8,14 +8,14 @@
  */
 
 import {useCallback, useContext, useState} from 'react'
-import {Inline, Tooltip, Box, Stack, Text} from '@sanity/ui'
+import {Box, Inline, Stack, Text, Tooltip} from '@sanity/ui'
 import {
+  AddCircleIcon,
   ErrorOutlineIcon,
   InfoOutlineIcon,
-  AddCircleIcon,
-  TrashIcon,
-  ToggleArrowRightIcon,
   SquareIcon,
+  ToggleArrowRightIcon,
+  TrashIcon,
 } from '@sanity/icons'
 import {useCreateConcept, useRemoveConcept} from '../hooks'
 import {ChildConceptTerm} from '../types'
@@ -34,11 +34,11 @@ export const Children = ({concept}: {concept: ChildConceptTerm}) => {
   const removeConcept = useRemoveConcept(document)
 
   const handleAddChild = useCallback(() => {
-    createConcept('concept', concept?.id, concept?.prefLabel)
+    createConcept('concept', concept?.id, concept?.prefLabel.en)
   }, [concept?.id, concept?.prefLabel, createConcept])
 
   const handleRemoveConcept = useCallback(() => {
-    removeConcept(concept.id, 'concept', concept?.prefLabel)
+    removeConcept(concept.id, 'concept', concept?.prefLabel.en)
   }, [concept.id, concept?.prefLabel, removeConcept])
 
   const [levelVisibility, setLevelVisibility] = useState(treeVisibility)

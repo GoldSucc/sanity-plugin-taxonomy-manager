@@ -5,7 +5,7 @@
  */
 
 import {useCallback, useState} from 'react'
-import {Dialog, Box, Text, Stack, Label} from '@sanity/ui'
+import {Box, Dialog, Label, Stack, Text} from '@sanity/ui'
 import {InfoOutlineIcon} from '@sanity/icons'
 import {StyledTreeButton} from '../styles'
 
@@ -36,7 +36,7 @@ export const ConceptDetailDialogue = ({concept}: {concept: any}) => {
                 <Stack space={2}>
                   <Label size={1}>Definition</Label>
                   <Text size={2} muted style={{whiteSpace: 'pre-wrap'}}>
-                    {concept.definition}
+                    {JSON.stringify(concept.definition)}
                   </Text>
                 </Stack>
               )}
